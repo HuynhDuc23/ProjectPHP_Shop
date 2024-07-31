@@ -8,3 +8,114 @@ Một số chức năng :
 - LocalStorage
 - Thư viện soạn thảo (summernote)
 - Cookie / Session trong dự án 
+
+1 Phân tích dự án : 
+- FrontEnd : 
+     - Trang Chủ 
+     - Trang Danh Sách Sản Phẩm
+     - Trang Chi Tiết Sản Phẩm
+     - Trang Giỏ hàng
+     - Trang Check out (Thông Tin Mua Hàng và Đặt Hàng)
+     - Trang Thanh Toán Hoàn Thành
+     - Trang Liên Hệ 
+  -Admin : 
+     - Tài Khoản Người dùng :
+        Quản lý role(Admin , user)
+        Quản lý người dùng : admin/user
+             Hiển thị danh sách / thêm / sửa xoá 
+        Đăng ký tài Khoản
+        Đăng Nhập
+     -  Quản lý danh mục sản Phẩm (CRUD)
+     - Quản lý sản Phẩm (CRUD)
+     - Quản lý đơn hàng (CRUD)
+           Hiển thị được danh sách đơn hàng => hiển thị giảm dần theo thời gian
+              (quản lý được trạng thái)
+     - Quản lý phản hồi
+2 Phân tích thiết kế database
+
+1 Bảng Role 
+   - id : int -> Khoá chính tự tăng
+   - name : string (varchar) - 20 Ký tự
+2 Bảng User 
+   - id : int -> Khoá chính tự tăng
+   - fullname : string (varchar) -> 50 ký tự
+   - email -> string -> 150 ký tự -> unique
+   - phone -> string -> 20 ký tự
+   - address -> string 200 ký tự
+   - password -> string -> md5 -> 32 ký tự -> chính xác
+   - deleted : int : 0 xoá 1 chưa xoá
+   - role_id -> int -> foreign key -> role (id)
+   - created_at : datetime -> tạo bảng ghi
+   - updated_at : datetime -> sửa bảng ghi đó
+3  Bảng Category (Bảng Danh mục)
+   - id : int -> khoá tự tăng -> int : vì dùng khoá tự tăng
+   - name : string -> 100 ký tự
+4  Bảng Product (Sản phẩm)
+    - id : int -> Khoá chính tự tăng
+    - category_id -> int -> foreign key -> category (id)
+    - title : string -> 350 ký tự
+    - price: int 
+    - discount : int -> (giá giảm giá) cuối cùng
+    - thumbnail : string -> 500 ký tự
+    - description : longtext 
+    - deleted : int : 0 xoá 1 chưa xoá
+    - created_at : datetime -> tạo bảng ghi
+    - updated_at : datetime -> sửa bảng ghi đó
+5 Bảng quản lý galery (chi tiết của product)
+    - id : int -> khoá tự tăng
+    - product_id -> int -> foreign key -> product (id)
+    - thumbnail -> string -> 500 ký tự
+6 Bảng quản lý phản hồi : feedback 
+    - id : int -> khoá tự tăng
+    - firstname -> string -> 30 ký tự
+    - lastname -> string -> 30 ký tự
+    - email -> string -> 150 ký tự
+    - phone_number -> string -> 20 ký tự
+    - subject_name -> string -> 200 ký tự
+    - note -> string (varchar) -> độ dài tối đa -> 500 ký tự
+7 Bảng quản lý đơn hàng 
+    - id : int tự tăng
+    - fullname 
+    - email
+    - phone_number 
+    - address
+    - note
+    - order_date : datetime -> thời gian đặt đơn Hàng
+    - status : int -> pending, sucess
+    - danh sách sản Phẩm
+       + sản phẩm 1 * số lượng * giá thời điểm mua
+       + sản phẩm 2 * số lượng * giá thời điểm mua
+7.1 Bảng Orders (đơn hàng)
+    - id : int tự tăng
+    - fullname 
+    - email
+    - phone_number 
+    - address
+    - note
+    - order_date : datetime -> thời gian đặt đơn Hàng
+    - status : int -> pending, sucess
+    - total_money -> int -> tổng tiền của đơn hàng
+7.2 Bảng chi tiết đơn Hàng Order_Details
+    - id : int tự tăng
+    - order_id-> int -> foreign key -> order (id)
+    - product_id -> int -> foreign key -> product (id)
+    - price -> int 
+    - num -> int -> số lượng sản phẩm mua
+    - total_money -> lưu tổng tiền của sản phẩm (price*num) (không nên)
+
+Sử dụng dbdiagram cho dự án -> draw 
+Thông thường User và Product không nên xoá dữ liệu thật khỏi hệ thống
+
+
+
+
+
+
+
+
+
+            
+
+
+         
+      
