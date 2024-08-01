@@ -1,8 +1,17 @@
 <?php
-require_once('../../utils/utility.php');
+
 require_once('../../database/config.php');
+require_once('../../utils/utility.php');
 require_once('../../database/dbhelper.php');
 require_once('./process_form_login.php');
+session_start();
+
+
+$user = getUserToken();
+if ($user != null) {
+  header('Location: ../index.php');
+  die();
+}
 ?>
 
 <!DOCTYPE html>
