@@ -87,6 +87,7 @@ Một số chức năng :
        + sản phẩm 2 * số lượng * giá thời điểm mua
 7.1 Bảng Orders (đơn hàng)
     - id : int tự tăng
+    - user_id : int -> foreign key -> User(id)
     - fullname 
     - email
     - phone_number 
@@ -105,6 +106,39 @@ Một số chức năng :
 
 Sử dụng dbdiagram cho dự án -> draw 
 Thông thường User và Product không nên xoá dữ liệu thật khỏi hệ thống
+
+-- Khung dự án
+
+- FrontEnd 
+- Admin
+- CSDL
+
+FrontEnd : - index.php
+           - category.php
+           - detail.php
+           - cart.php
+           - checkout.php
+           - complete.php
+           - contact.php
+Admin : 
+     - authen/***
+     - user/***
+     - category/***
+     - product/***
+     - order/***
+     - feedback/***
+     index.php -> báo cáo thống kê
+database :
+     - config.php -> cấu hình CSDL 
+     - dbhelper.php -> chứa function dùng chung cho cả dự án về database
+utility.php -> chứa các hàm tiện tích cho cả dự án    
+
+
+Xây dựng authen
+- login page
+- register page
+- keep login
+
 
 
 

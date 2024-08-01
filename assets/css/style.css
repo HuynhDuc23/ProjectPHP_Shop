@@ -1,0 +1,25 @@
+body {
+  background-image: url(../../assets/photos/ecommerce/ecom.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.title--header__color{
+  color: blue;
+  font-style: italic;
+  font-size: large;
+  text-transform: uppercase;
+}
+.title--header__color:hover{
+  color: blue;
+  font-style: italic;
+  font-size: large;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+}
+button {
+  cursor: pointer;
+}
+.panel__color {
+  box-shadow: 2px 2px cornflowerblue;
+}
