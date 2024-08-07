@@ -1,5 +1,5 @@
 <?php
-
+require_once('config.php');
 // Execute insert, update, delete queries
 function execute($sql)
 {

@@ -3,7 +3,6 @@ session_start();
 require_once($baseUrl . '../database/config.php');
 require_once($baseUrl . '../utils/utility.php');
 require_once($baseUrl . '../database/dbhelper.php');
-
 $user = getUserToken();
 if ($user == null) {
   header('Location: ' . $baseUrl . 'authen/login.php');

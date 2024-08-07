@@ -47,7 +47,7 @@ function getUserToken()
     $item = executeResult($sql, true);
     if ($item != null) {
       $userId = $item['user_id'];
-      $sql = "SELECT * FROM user WHERE id = '$userId'";
+      $sql = "SELECT * FROM user WHERE id = '$userId' and deleted = 0";
       $item = executeResult($sql);
       if ($item != null) {
         $_SESSION['user'] = $item;
