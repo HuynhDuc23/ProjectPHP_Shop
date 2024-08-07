@@ -136,9 +136,19 @@ utility.php -> chứa các hàm tiện tích cho cả dự án
 
 Xây dựng authen
 - login page
-- register page
-- keep login
+- register page -> done
+- keep login : lưu giữ đăng nhập : đa kết nối  
+   - validation auto login
+   - logout : xoá cookie , xoá session , xoá khỏi bảng 
 
+--> login thành công -> tạo ra token duy nhất : ( cho tài khoản + tài thời điểm login)
+- token -> Cookie
+- get cookie -> của người dùng nào -> validaton auto login
+- lưu token -> vào CSDL -> quản lý nó
+- kết hợp sử dụng session -> hệ thống này tối ưu hơn về login
+
+
+Huong dan xay dung layout cho trang quan tri
 
 
 

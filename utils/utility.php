@@ -44,7 +44,7 @@ function getUserToken()
   } else {
     $token = getCookie('token');
     $sql = "SELECT * FROM tokens Where token = '$token'";
-    $item = executeResult($sql);
+    $item = executeResult($sql, true);
     if ($item != null) {
       $userId = $item['user_id'];
       $sql = "SELECT * FROM user WHERE id = '$userId'";

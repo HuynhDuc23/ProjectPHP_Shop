@@ -12,3 +12,5 @@ $token = getCookie("token");
 setcookie("token", '', time() - 100, '/');
 
 session_destroy();
+
+header('Location:login.php');

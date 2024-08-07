@@ -1,7 +1,7 @@
 <?php
 $title = 'Dashboard Page';
-$baseUrl = '';
-require_once('./layouts/header.php')
+$baseUrl = '../';
+require_once('../layouts/header.php')
 ?>
 <div class="row">
   <div class="col-md-12">
@@ -9,4 +9,4 @@ require_once('./layouts/header.php')
   </div>
 </div>
 
-<?php require_once('./layouts/header.php') ?>
+<?php require_once('../layouts/header.php') ?>

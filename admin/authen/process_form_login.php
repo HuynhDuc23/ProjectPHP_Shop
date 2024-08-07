@@ -14,7 +14,7 @@ if (!empty($_POST)) {
     $token = getSecurityMd5($userExits["email"] . time());
     setcookie("token", $token, time() + 7 * 24 * 60 * 60, "/");
     $userId = $userExits['id'];
-    $sql = "INSERT INTO php_webshop.token (user_id , token) VALUES ('$userId', '$token')";
+    $sql = "INSERT INTO php_webshop.tokens (user_id , token) VALUES ('$userId', '$token')";
     execute($sql);
     header("Location: ../index.php");
     die();

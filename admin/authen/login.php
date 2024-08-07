@@ -1,11 +1,9 @@
 <?php
-
+session_start();
 require_once('../../database/config.php');
 require_once('../../utils/utility.php');
 require_once('../../database/dbhelper.php');
 require_once('./process_form_login.php');
-session_start();
-
 
 $user = getUserToken();
 if ($user != null) {
@@ -18,7 +16,7 @@ if ($user != null) {
 <html>
 
 <head>
-  <title>Registation Form * Form Tutorial</title>
+  <title>LoginForm * Form Tutorial</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
