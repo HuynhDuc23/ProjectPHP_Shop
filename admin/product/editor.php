@@ -26,6 +26,10 @@ if ($id != '' && $id > 0) {
 $sql = "select * from category ";
 $data = executeResult($sql);
 ?>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <div class="row" style="margin-top: 60px;">
   <div class="col-md-12 table-responsive">
     <h3>Thêm/Sửa Sản Phẩm</h3>
@@ -85,7 +89,22 @@ $data = executeResult($sql);
 </div>
 
 
-
+<script>
+  $('#description').summernote({
+    placeholder: 'Nhập nội dung dữ liệu',
+    tabsize: 2,
+    height: 300,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+</script>
 <?php
 require_once('../layouts/footer.php');
 ?>
