@@ -24,7 +24,6 @@ if ($id != '' && $id > 0) {
 }
 $sql = "select * from role";
 $roleItems = executeResult($sql);
-
 ?>
 <div class="row" style="margin-top: 20px;">
   <div class="col-md-12 table-responsive mt-5">
