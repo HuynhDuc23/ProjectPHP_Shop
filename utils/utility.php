@@ -60,6 +60,7 @@ function getUserToken()
 
 function moveFile($key, $rootPath = "../../")
 {
+  // kiem tra tiep ton tai hay khong
   if (!isset($_FILES[$key]) || !isset($_FILES[$key]['name']) || $_FILES[$key]['name'] == '') {
     return '';
   }
