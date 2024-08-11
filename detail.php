@@ -106,7 +106,7 @@ $lastestItems = executeResult($sql);
 <script type="text/javascript">
   function addMoreCart(delta) {
     num = parseInt($('[name=num]').val())
-    num += delta
+    num += delta;
     if (num < 1) num = 1;
     $('[name=num]').val(num)
   }
